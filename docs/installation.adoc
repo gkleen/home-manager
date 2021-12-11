@@ -166,11 +166,10 @@ include a basic Bash configuration and the packages atool and httpie.
 
 [NOTE]
 ====
-If `nixos-rebuild switch` does not result in the environment you expect,
-you can take a look at the output of the Home Manager activation script output using
-
-[source,console]
-$ systemctl status "home-manager-$USER.service"
+If after a `nixos-rebuild switch` you *don't* have the environment
+you expect, you can take a look at home-manager's output with
+[source,bash]
+journalctl SYSLOG_IDENTIFIER=hm-activate-$USER
 ====
 
 If you do not plan on having Home Manager manage your shell
